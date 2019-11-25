@@ -9,12 +9,17 @@
   <meta property="og:url" content="https://thealbanian.house" />
   <title>TheAlbanianHouse</title>
   <link rel="icon" type="image/png" href="img/favicon-01.png" />
-  <link rel="stylesheet" href="css/leaflet.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/leaflet-src.js"></script>
+  <!-- <link rel="stylesheet" href="css/leaflet.css" /> -->
+
+  <!-- <script src="js/leaflet/leaflet-src.js"></script> -->
+
+  <link rel="stylesheet" href="plugins/leaflet/leaflet.css" />
+
+  <!--
   <script src="js/leaflet-providers.js"></script>
-  <script src="js/leaflet-omnivore.min.js"></script>
-  <script src="js/top.min.js"></script>
+-->
+
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap" rel="stylesheet">
   <style type="text/css">
     .title{
@@ -51,7 +56,9 @@
     <p class="footer">Bibliography of the project is documented <a href="bibliography">here</a>.</p>
     <p><img src="img/logo-sponsors.png" width="100%" height="auto"></p>
   </div>
-
+  <script src="plugins/leaflet/leaflet.js"></script>
+    <script src="js/leaflet-omnivore.min.js"></script> 
+<script src="js/top.min.js"></script>
 <script>
 var exp = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=(),]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=,()]*)/gi;
 var regexp = new RegExp(exp);
@@ -59,7 +66,8 @@ var regexp = new RegExp(exp);
 var eventsList = document.querySelector('.event-list')
 
 var map = L.map('map').setView([41.344,19.696], 8);
-L.tileLayer.provider('CartoDB.Positron').addTo(map);
+
+L.tileLayer('CartoDB.Positron').addTo(map);
 
 var GreenIcon = L.icon({
   iconUrl: 'img/map_icon.png',
